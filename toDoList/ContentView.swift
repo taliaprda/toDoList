@@ -35,7 +35,7 @@ struct ContentView: View {
             }
             
             if showNewTask == true{
-                newToDoView(title: "", isImportant: false)
+                newToDoView(title: "", isImportant: false, toDoItems: .constant([]))
                     }
         }
     }

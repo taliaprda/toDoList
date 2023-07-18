@@ -11,7 +11,7 @@ struct newToDoView: View {
     
     @State var title: String
     @State var isImportant: Bool
-    @Binding var toDoItems:.constant([toDoItem])
+    @Binding var toDoItems: [toDoItem]
     
     var body: some View {
         VStack {
@@ -44,7 +44,7 @@ struct newToDoView: View {
 struct newToDoView_Previews: PreviewProvider {
     static var previews: some View
     {
-    newToDoView(title: "", isImportant: false)
+        newToDoView(title: "", isImportant: false, toDoItems: .constant([]))
     }
 }
     
