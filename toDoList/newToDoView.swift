@@ -11,6 +11,7 @@ struct newToDoView: View {
     
     @State var title: String
     @State var isImportant: Bool
+    @Binding var toDoItems:.constant([toDoItem])
     
     var body: some View {
         VStack {
@@ -27,17 +28,24 @@ struct newToDoView: View {
             Toggle(isOn:$isImportant){Text("Is it important?")}
                 .padding(.horizontal)
             
-            Button(action: {})
+            Button(action: {self.addTask(title: self.title, isImportant: self.isImportant)})
             {Text("Add")}
                 .padding()
         }
         .padding()
     }
-    
+    private func addTask(title: String, isImportant: Bool = false) {
+            
+            let task = toDoItem(title: title, isImportant: isImportant)
+            toDoItems.append(task)
+        }
+}
+
 struct newToDoView_Previews: PreviewProvider {
     static var previews: some View
     {
-        newToDoView(title: "", isImportant: false)
-        }
+    newToDoView(title: "", isImportant: false)
     }
 }
+    
+
