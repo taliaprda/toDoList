@@ -31,6 +31,7 @@ struct newToDoView: View {
             {Text("Add")}
                 .padding()
         }
+        .padding()
     }
     
 struct newToDoView_Previews: PreviewProvider {
